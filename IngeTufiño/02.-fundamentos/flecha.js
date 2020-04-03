@@ -3,8 +3,7 @@
 // }
 
 let sumar = (a, b) => a + b;
-
-console.log(`La suma es ${sumar(4, 3)}`);
+console.log(`La suma de a + b es: ${sumar(4, 3)}`);
 
 function saludar() {
   return `Hola`;

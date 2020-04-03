@@ -7,12 +7,11 @@ let deadpool = {
   },
 };
 
-// Opcion1
-console.log(deadpool.getNombre());
-let nom = deadpool.nombre;
-let ape = deadpool.apellido;
-let pod = deadpool.poder;
-
-// Opcion 2
 let { nombre: primerNombre, apellido, poder } = deadpool;
 console.log(primerNombre, apellido, poder);
+
+// Opcion1
+// console.log(deadpool.getNombre());
+// let nom = deadpool.nombre;
+// let ape = deadpool.apellido;
+// let pod = deadpool.poder;
