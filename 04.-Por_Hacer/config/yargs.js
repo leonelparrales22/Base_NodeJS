@@ -14,7 +14,7 @@ const argv = require("yargs")
       desc: "Descripción de la tarea por hacer",
     },
   })
-  .command("listar", "Actualiza el estado completado de una tarea", {
+  .command("actualizar", "Actualiza el estado completado de una tarea", {
     descripcion: {
       demand: true,
       alias: "d",
