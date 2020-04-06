@@ -1,5 +1,6 @@
 const argv = require("./config/yargs").argv;
 const porHacer = require("./por_hacer/por_hacer");
+const color = require("colors");
 
 let comando = argv._[0];
 
@@ -9,10 +10,21 @@ switch (comando) {
     console.log(tarea);
     break;
   case "listar":
-    console.log("listar");
+    let listado = porHacer.getListado();
+    for (let tarea of listado) {
+      console.log("==========POR HACER==========".green);
+      console.log(tarea.descripcion);
+      console.log("Estado: ", tarea.completado);
+      console.log("=============================".green);
+    }
     break;
   case "actualizar":
-    console.log(argv.descripcion + " POST");
+    let actualizado = porHacer.actualizar(argv.descripcion, argv.completado);
+    console.log(actualizado);
+    break;
+  case "borrar":
+    let borrado = porHacer.borrar(argv.descripcion);
+    console.log(borrado);
     break;
   default:
     console.log("Comando no reconocido");
