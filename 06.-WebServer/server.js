@@ -6,8 +6,9 @@ app.use(express.static(__dirname + "/public"));
 
 //Express HBS engine
 hbs.registerPartials(__dirname + "/views/partials");
-
 require("./hbs/helpers");
+
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "hbs");
 
@@ -27,6 +28,6 @@ app.get("/data", (req, res) => {
   res.send("Hola Data");
 });
 
-app.listen(3000, () => {
-  console.log("Esuchando peticiones en el puerto 3000.");
+app.listen(port, () => {
+  console.log(`Esuchando peticiones en el puerto ${port}.`);
 });
