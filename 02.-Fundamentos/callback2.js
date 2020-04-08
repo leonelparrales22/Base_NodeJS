@@ -1,31 +1,31 @@
 let empleados = [
   {
     id: 1,
-    nombre: "Fernando"
+    nombre: "Fernando",
   },
   {
     id: 2,
-    nombre: "Melissa"
+    nombre: "Melissa",
   },
   {
     id: 3,
-    nombre: "Juan"
-  }
+    nombre: "Juan",
+  },
 ];
 
 let salarios = [
   {
     id: 1,
-    salario: 1000
+    salario: 1000,
   },
   {
     id: 2,
-    salario: 2000
-  }
+    salario: 2000,
+  },
 ];
 
 let getEmpleado = (id, callback) => {
-  let empleadoDB = empleados.find(empleado => empleado.id === id);
+  let empleadoDB = empleados.find((empleado) => empleado.id === id);
   if (!empleadoDB) {
     callback(`No existe un empleado con el ID: ${id}`);
   } else {
@@ -42,12 +42,12 @@ getEmpleado(1, (err, empleado) => {
 });
 
 let getSalario = (nombre, callback) => {
-  let empleadoDB = empleados.find(empleado => empleado.nombre === nombre);
+  let empleadoDB = empleados.find((empleado) => empleado.nombre === nombre);
   if (!empleadoDB) {
     callback(`No existe el usuario: ${nombre}`);
   } else {
     console.log(empleadoDB);
-    let salarioDB = salarios.find(salario => salario.id === empleadoDB.id);
+    let salarioDB = salarios.find((salario) => salario.id === empleadoDB.id);
     if (!salarioDB) {
       callback(`No existe el salario para: ${nombre}`);
     } else {
@@ -65,14 +65,14 @@ getSalario("Juanes", (err, empleado, salario) => {
 });
 
 let getSalario2 = (id, callback) => {
-  resultado = salarios.find(i => i.id == id);
+  resultado = salarios.find((i) => i.id == id);
   if (!resultado) {
     callback(`Salario no encontrado para id`);
   } else {
     callback(null, {
       id: id,
       nombre: "CORREGIR",
-      salario: resultado.salario
+      salario: resultado.salario,
     });
   }
 };
