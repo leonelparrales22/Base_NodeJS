@@ -14,6 +14,7 @@ let getUsuarioById = (id, callback) => {
   }
 };
 
+// Armando la funci{on de callback en la llamada al método
 getUsuarioById(1, (err, usuario) => {
   if (err) {
     return console.log(err);

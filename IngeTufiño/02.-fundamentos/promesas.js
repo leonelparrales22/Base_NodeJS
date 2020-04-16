@@ -50,7 +50,7 @@ let getSalario = (empleado) => {
   });
 };
 
-getEmpleado(3)
+getEmpleado(2)
   .then((empleado) => {
     return getSalario(empleado);
   })
