@@ -1,37 +1,23 @@
-// let getNombre = async () => {
-//   undefined.nombre;
-//   throw new Error("No existe el usuario en el BDD");
-//   return "Leonel";
-// };
-
-//console.log(getNombre());
-
 let getNombre = () => {
-  return new Promise((resolve, reject) => {
-    // setTimeout(() => {
-    //   resolve("Leonel");
-    // }, 3000);
-    reject("Error al consultar el nombre");
-  });
+  if (1 === 2) {
+    return "Leonel";
+  } else {
+    throw new Error(`No existe un empleado con el ID.`);
+  }
 };
 
+
+//Puedo llamar los tantos await como promesas necesite
 let saludo = async () => {
   let nombre = await getNombre();
   return `Hola ${nombre}`;
 };
 
-// getNombre()
-//   .then((nombre) => {
-//     console.log(nombre);
-//   })
-//   .catch((err) => {
-//     console.log("Error en el ASYNC: ", err);
-//   });
-
+//Al final basta con solo un then y un catch
 saludo()
   .then((mensaje) => {
     console.log(mensaje);
   })
   .catch((err) => {
-    console.log("Error: ", err);
+    console.log(err.name, err.message);
   });
