@@ -14,9 +14,9 @@ const argv = require("yargs").command(
   }
 ).argv;
 
-console.log(argv.base, argv.limite);
+//console.log(argv.base, argv.limite);
+//let base = process.argv[2].split("=")[1];
 
-// let base = process.argv[2].split("=")[1];
-// crearArchivo(base)
-//   .then((mensaje) => console.log(mensaje))
-//   .catch((err) => console.log(err));
+crearArchivo(argv.base)
+  .then((mensaje) => console.log(mensaje))
+  .catch((err) => console.log(err.name, err.message));
