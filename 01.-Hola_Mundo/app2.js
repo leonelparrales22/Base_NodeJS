@@ -5,3 +5,5 @@ function saludar(nombre) {
 
 let saludo = saludar("Leonel");
 console.log(saludo);
+
+console.log("Hola");
