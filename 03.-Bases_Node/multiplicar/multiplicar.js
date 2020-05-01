@@ -12,8 +12,8 @@ let listarTabla = (base, limite) => {
       return;
     }
     console.log("============================".green);
-    console.log(`======TABLA DE ${base}======`.green);
-    console.log("============================".green);
+    console.log(`========TABLA DE ${base}========`.green);
+    console.log(colors.green("============================"));
     for (let i = 1; i <= limite; i++) {
       console.log(`${base} * ${i} = ${base * i}`);
       resolve();
