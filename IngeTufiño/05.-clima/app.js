@@ -5,14 +5,25 @@ const argv = require("yargs").options({
     desc: "Nombre de la ciudad para obtener el clima",
     demand: true,
   },
+  opcional: {
+    alias: "o",
+    desc: "Presión atmosférica = p,  Humedad = h",
+  },
 }).argv;
 
 const getInformacion = async (ciudad) => {
   try {
-    const temp = await clima.getClima(argv.ciudad);
-    return `El clima de ${ciudad} es de ${temp}`;
+    const data = await clima.getClima(argv.ciudad);
+    switch (argv.opcional) {
+      case "p":
+        return `El clima de ${ciudad} es de: ${data.temp}. Presión Atmosférica: ${data.presion}.`
+      case "h":
+        return `El clima de ${ciudad} es de: ${data.temp}. Humedad: ${data.humedad}.`
+      default:
+        return `El clima de ${ciudad} es de ${data.temp}.`;
+    }
   } catch (error) {
-    return `No se encontró el clima de ${temp}`;
+    return `No se encontró el clima de ${ciudad}`;
   }
 };
 
