@@ -1,1 +1,5 @@
-[{"descripcion":"Jugar","completado":"true"},{"descripcion":"Dormir","completado":false},{"descripcion":"No hacer nada","completado":false}]
+[
+  { "descripcion": "Jugar", "completado": "true" },
+  { "descripcion": "Dormir", "completado": false },
+  { "descripcion": "No hacer nada", "completado": false }
+]
